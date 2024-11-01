@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "royaction.color-manager",
+    "dsznajder.es7-react-js-snippets",
+    "peterschmalfeldt.explorer-exclude",
+    "github.vscode-pull-request-github",
+    "pkief.material-icon-theme",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "qwtel.sqlite-viewer",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg",
+    "mtxr.sqltools-driver-mysql",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
