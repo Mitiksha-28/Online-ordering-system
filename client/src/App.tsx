@@ -9,15 +9,14 @@ function App() {
   const [backendTables, setBackendTables] = useState<string[]>([]);
   const [menuItem, setMenuItem] = useState("");
   const handleMenuItemChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMenuItem(event.target.value)
-  }
+    setMenuItem(event.target.value);
+  };
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
     axios.post("/api/menu-items/create", { menuItem }).then((response) => {
       console.log(response.data);
-    })
-    
-  }
+    });
+  };
   useEffect(() => {
     axios.get("/api/tables").then((response) => {
       setBackendTables(response.data);
@@ -41,7 +40,12 @@ function App() {
           return table;
         })}
       </span>
-      <form action=""><input type="text" className="border" onChange={handleMenuItemChange} /><button onClick={handleSubmit} type="submit">submit</button></form>
+      <form action="">
+        <input type="text" className="border" onChange={handleMenuItemChange} />
+        <button onClick={handleSubmit} type="submit">
+          submit
+        </button>
+      </form>
     </div>
   );
 }

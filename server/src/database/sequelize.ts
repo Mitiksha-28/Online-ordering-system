@@ -5,4 +5,3 @@ export const sequelize = new Sequelize({
   storage: "database.sqlite",
   logging: false,
 });
-

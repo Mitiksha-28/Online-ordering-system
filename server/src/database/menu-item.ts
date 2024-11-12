@@ -1,20 +1,23 @@
-import { DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model, NonAttribute } from "sequelize";
 import { sequelize } from "./sequelize";
+import { randomUUID, UUID } from "node:crypto";
 
 export class MenuItem extends Model<InferAttributes<MenuItem>, InferCreationAttributes<MenuItem>> {
-  public declare id: number;
+  public declare id: CreationOptional<UUID>;
   public declare name: string;
   public declare price: number;
   public declare description: string;
   public declare image: string;
+  public declare createdAt: NonAttribute<CreationOptional<Date>>;
+  public declare updatedAt: NonAttribute<CreationOptional<Date>>;
 }
 
 MenuItem.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
+      type: DataTypes.UUID,
       primaryKey: true,
+      defaultValue: () => randomUUID(),
     },
     name: {
       type: DataTypes.STRING,
