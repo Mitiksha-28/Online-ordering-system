@@ -1,6 +1,7 @@
+import { sequelize } from "./sequelize";
 export { Order } from "./order";
 export { MenuItem } from "./menu-item";
+export { User, Session } from "./relations";
 
-import { sequelize } from "./sequelize";
-// sequelize.sync({force:true});
+// sequelize.sync({ force: true });
 export { sequelize };
